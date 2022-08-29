@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+
+
+    <style>
+        .register{
+            border-radius: 10px;
+            box-shadow: 0 40px 16px rgba(0, 0, 0, .25);
+            margin-bottom: 40px;
+            padding: 40px;
+
+
+        }
+    </style>
+    <section class="register">
+    <h1>Register</h1>
+
+    {{ form_start(registrationForm) }}
+            <fieldset class="mb-3">
+                <legend>My identity</legend>
+
+                    </fieldset>
+                </div>
+                {{ form_row(registrationForm.lastname) }}
+                {{ form_row(registrationForm.firstname) }}
+                {{ form_row(registrationForm.email) }}
+
+            </fieldset>
+            <fieldset class="mb-3">
+                <legend>My contact details</legend>
+                {{ form_row(registrationForm.adress) }}
+                {{ form_row(registrationForm.city) }}
+
+            </fieldset>
+            <fieldset>
+
+                {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+                    {{ form_row(registrationForm.RGPDConsent) }}
+                </fieldset>
+
+        <button type="submit" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Register</font></font></button>
+    {{ form_end(registrationForm) }}
+    </section>
+{% endblock %}
